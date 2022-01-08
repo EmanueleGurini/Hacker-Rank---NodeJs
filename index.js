@@ -5,7 +5,8 @@
     2. Simple Array Sum
     3. Compare The Triplets
     4. A Very Big Sum
-    5. Diagonal Difference 
+    5. Diagonal Difference
+    6. Plus Minus 
 
 */
 
@@ -114,3 +115,20 @@ const diagonalDifference = (arr) => {
 /* ------------------------------------------------------------------------- *
 /* 6. Plus Minus */
 /* ------------------------------------------------------------------------- */
+
+let arr = [-4, 3, -9, 0, 4, 1]
+
+const plusMinus = (arr) => {
+  // Write your code here
+
+  let resPlus = arr.filter(el => el > 0).length / arr.length;
+  let resMinus = arr.filter(el => el < 0).length / arr.length;
+  let resZero = arr.filter(el => el === 0).length / arr.length;
+
+  const getSixDecimal = value => value.toFixed(6) 
+
+  return console.log(getSixDecimal(resPlus) + '\n' + getSixDecimal(resMinus) + '\n' + getSixDecimal(resZero))
+
+}
+
+plusMinus(arr);
