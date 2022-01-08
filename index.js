@@ -4,7 +4,8 @@
     1. Solve Me First
     2. Simple Array Sum
     3. Compare The Triplets
-    4. A Very Big Sum 
+    4. A Very Big Sum
+    5. Diagonal Difference 
 
 */
 
@@ -68,7 +69,7 @@ const compareTriplets = (a, b) => {
 /* 4. A Very Big Sum */
 /* ------------------------------------------------------------------------- */
 
-let arr = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+// let arr = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
 
 const aVeryBigSum = (ar) => {
     // Write your code here
@@ -81,4 +82,35 @@ const aVeryBigSum = (ar) => {
   return sum
 }
 
-console.log('Compare Triplets:', aVeryBigSum(arr))
+// console.log('A Very Big Sum:', aVeryBigSum(arr))
+
+/* ------------------------------------------------------------------------- *
+/* 5. Diagonal Difference */
+/* ------------------------------------------------------------------------- */
+
+// let arr = [ [11,  2,   4], 
+//             [ 4,  5,   6], 
+//             [10,  8, -12],]
+
+const diagonalDifference = (arr) => {
+    // Write your code here
+  let length = arr.length;
+
+  let diagonal1 = 0, diagonal2 = 0; 
+
+  for(let i = 0; i < length; i++){
+
+    diagonal1 += arr[i][i]
+    diagonal2 += arr[length -1 -i][i]
+
+  }
+  
+  return Math.abs(diagonal1 - diagonal2);
+
+}
+
+// console.log('Diagonal Difference:', diagonalDifference(arr))
+
+/* ------------------------------------------------------------------------- *
+/* 6. Plus Minus */
+/* ------------------------------------------------------------------------- */
