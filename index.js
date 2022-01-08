@@ -73,6 +73,12 @@ let arr = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
 const aVeryBigSum = (ar) => {
     // Write your code here
 
+    let sum = 0; 
+
+    ar.forEach(function(element){
+      sum = sum + element;
+    })
+  return sum
 }
 
 console.log('Compare Triplets:', aVeryBigSum(arr))
