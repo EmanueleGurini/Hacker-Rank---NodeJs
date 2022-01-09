@@ -9,6 +9,7 @@
     6. Plus Minus 
     7. Staircase
     8. Minmax Sum
+    9. Birthday Cake Candles
 
 */
 
@@ -153,7 +154,7 @@ const staircase = (n) => {
 /* 8. Minmax Sum */
 /* ------------------------------------------------------------------------- */
 
-let arr = [1, 2, 3, 4, 5]
+// let arr = [1, 2, 3, 4, 5]
 
 function miniMaxSum(arr) {
   // Write your code here
@@ -164,4 +165,30 @@ function miniMaxSum(arr) {
 
 }
 
-miniMaxSum(arr); 
+// miniMaxSum(arr); 
+
+/* ------------------------------------------------------------------------- *
+/* 9. Birthday Cake Candles */
+/* ------------------------------------------------------------------------- */
+
+let arr = [3, 2, 1, 3]
+
+function birthdayCakeCandles(arr) {
+  // Write your code here
+  let candlesCount = 0;
+
+  //Find the biggest number inside candles array
+  let biggestNumOfCandles = Math.max(...arr)
+
+  //For every num inside canldles array, if this num is equals to the biggest num inside candles, candlesCount value increase itself by one
+    for(var i = 0; i < arr.length; i++){
+        if (arr[i] == biggestNumOfCandles){
+            candlesCount = candlesCount + 1;
+        }
+    }
+
+  return candlesCount
+
+}
+
+console.log('birthdayCakeCanles:', birthdayCakeCandles(arr))
