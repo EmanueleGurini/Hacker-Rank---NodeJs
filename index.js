@@ -8,6 +8,7 @@
     5. Diagonal Difference
     6. Plus Minus 
     7. Staircase
+    8. Minmax Sum
 
 */
 
@@ -146,6 +147,21 @@ const staircase = (n) => {
   }
 }
 
-staircase(6)
+// staircase(6)
 
+/* ------------------------------------------------------------------------- *
+/* 8. Minmax Sum */
+/* ------------------------------------------------------------------------- */
 
+let arr = [1, 2, 3, 4, 5]
+
+function miniMaxSum(arr) {
+  // Write your code here
+  arr.sort();
+  let min = (arr.reduce((a, b) => a + b)) - arr[arr.length-1]; 
+  let max = (arr.reduce((a, b) => a + b)) - arr[0];
+  console.log(min + ' ' + max)
+
+}
+
+miniMaxSum(arr); 
