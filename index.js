@@ -7,6 +7,7 @@
     4. A Very Big Sum
     5. Diagonal Difference
     6. Plus Minus 
+    7. Staircase
 
 */
 
@@ -116,7 +117,7 @@ const diagonalDifference = (arr) => {
 /* 6. Plus Minus */
 /* ------------------------------------------------------------------------- */
 
-let arr = [-4, 3, -9, 0, 4, 1]
+// let arr = [-4, 3, -9, 0, 4, 1]
 
 const plusMinus = (arr) => {
   // Write your code here
@@ -131,4 +132,20 @@ const plusMinus = (arr) => {
 
 }
 
-plusMinus(arr);
+// plusMinus(arr);
+
+
+/* ------------------------------------------------------------------------- *
+/* 7. Staircase */
+/* ------------------------------------------------------------------------- */
+
+const staircase = (n) => {
+  // Write your code here
+  for(let i = 1; i <= n; i++){
+    console.log(' '.repeat(n-i) + '#'.repeat(i))
+  }
+}
+
+staircase(6)
+
+
