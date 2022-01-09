@@ -10,6 +10,7 @@
     7. Staircase
     8. Minmax Sum
     9. Birthday Cake Candles
+    10. Time Conversion
 
 */
 
@@ -171,7 +172,7 @@ function miniMaxSum(arr) {
 /* 9. Birthday Cake Candles */
 /* ------------------------------------------------------------------------- */
 
-let arr = [3, 2, 1, 3]
+// let arr = [3, 2, 1, 3]
 
 function birthdayCakeCandles(arr) {
   // Write your code here
@@ -191,4 +192,44 @@ function birthdayCakeCandles(arr) {
 
 }
 
-console.log('birthdayCakeCanles:', birthdayCakeCandles(arr))
+// console.log('birthdayCakeCanles:', birthdayCakeCandles(arr))
+
+/* ------------------------------------------------------------------------- *
+/* 10. Time Conversion */
+/* ------------------------------------------------------------------------- */
+
+const getMilitaryTime = (arr, meridian) => {
+
+  // check meridian and converts hours to military time
+  if(meridian === 'AM' && parseInt(arr[0]) === 12) {
+    arr[0] = '00';
+  } 
+
+  if (meridian === 'PM') {
+    arr[0] = parseInt(arr[0]) + 12;
+    arr[0] = parseInt(arr[0]) === 24 ? 12 : parseInt(arr[0]) 
+  }
+  
+  // create HOURS:MINUTES:SECOND string
+  let militaryTime = arr.join(':')
+
+  return militaryTime
+}
+
+const timeConversion = (s) => {
+  // Write your code here
+
+  // split string every colon and split array value every two chars
+  let timePiece = s.split(':').join('').split(/(..)/g).filter(s => s)
+
+  // set meridian as AM/PM
+  let meridian = timePiece[timePiece.length-1];
+
+  // remove AM/PM from timePiece Array
+  timePiece.pop();
+
+  return getMilitaryTime(timePiece, meridian)
+}
+
+// console.log('Time:', timeConversion('02:05:45PM'))
+console.log('Time:', timeConversion('12:40:22AM'))

@@ -13,4 +13,5 @@ Problem solved:
     7. Staircase
     8. Minmax Sum
     9. Birthday Cake Candles
+    10. Time Conversion
 
