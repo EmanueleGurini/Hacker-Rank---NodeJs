@@ -11,6 +11,7 @@
     8. Minmax Sum
     9. Birthday Cake Candles
     10. Time Conversion
+    11. Array DS
 
 */
 
@@ -232,4 +233,36 @@ const timeConversion = (s) => {
 }
 
 // console.log('Time:', timeConversion('02:05:45PM'))
-console.log('Time:', timeConversion('12:40:22AM'))
+// console.log('Time:', timeConversion('12:40:22AM'))
+
+/* ------------------------------------------------------------------------- *
+/* 11. Array DS */
+/* ------------------------------------------------------------------------- */
+
+let arr = [1, 4, 3, 2]
+
+const reverseArray = (arr) => {
+    // Write your code here
+
+      let i = 0;
+      let arrLength = arr.length; 
+      let counterDecrease = arrLength - 1; 
+
+      let placeHolder = null;
+
+
+      do {
+
+        placeHolder = arr[i];
+        arr[i] = arr[counterDecrease]; 
+        arr[counterDecrease] = placeHolder;
+
+        i++; 
+        counterDecrease--;
+        
+      } while (i <= counterDecrease)
+    
+      console.log(arr)
+}
+
+reverseArray(arr);
