@@ -13,6 +13,7 @@
     10. Time Conversion
     11. Array DS
     12. 2D Array - DS
+    13. Left Rotation
 
 */
 
@@ -272,14 +273,14 @@ const reverseArray = (arr) => {
 /* 12. 2D Array - DS */
 /* ------------------------------------------------------------------------- */
 
-let arr = [
-  [1, 1, 1, 0, 0, 0],
-  [0, 1, 0, 0, 0, 0],
-  [1, 1, 1, 0, 0, 0],
-  [0, 0, 2, 4, 4, 0],
-  [0, 0, 0, 2, 0, 0],
-  [0, 0, 1, 2, 4, 0],
-]
+// let arr = [
+//   [1, 1, 1, 0, 0, 0],
+//   [0, 1, 0, 0, 0, 0],
+//   [1, 1, 1, 0, 0, 0],
+//   [0, 0, 2, 4, 4, 0],
+//   [0, 0, 0, 2, 0, 0],
+//   [0, 0, 1, 2, 4, 0],
+// ]
 
 const hourglassSum = (arr) => {
   // Write your code here
@@ -316,4 +317,29 @@ const hourglassSum = (arr) => {
 
 }
 
-console.log(hourglassSum(arr));
+// console.log(hourglassSum(arr));
+
+/* ------------------------------------------------------------------------- *
+/* 13. Left Rotation */
+/* ------------------------------------------------------------------------- */
+
+let arr = [1, 2, 3, 4, 5]
+
+const rotateLeft = (n, arr) => {
+  // Write your code here
+  let arrFixed = [];
+  let index = null; 
+
+  for(let i = arr.length-1; i >= 0; i--) {
+    index = i - n; 
+    if(index < 0) {
+      arrFixed[index + arr.length] = arr[i]
+    } else {
+      arrFixed[i - n] = arr[i];
+    }
+  }
+    
+  return arrFixed
+}
+
+console.log(rotateLeft(4, arr));
