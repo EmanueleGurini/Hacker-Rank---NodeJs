@@ -12,6 +12,7 @@
     9. Birthday Cake Candles
     10. Time Conversion
     11. Array DS
+    12. 2D Array - DS
 
 */
 
@@ -239,7 +240,7 @@ const timeConversion = (s) => {
 /* 11. Array DS */
 /* ------------------------------------------------------------------------- */
 
-let arr = [1, 4, 3, 2]
+// let arr = [1, 4, 3, 2]
 
 const reverseArray = (arr) => {
     // Write your code here
@@ -265,4 +266,54 @@ const reverseArray = (arr) => {
       console.log(arr)
 }
 
-reverseArray(arr);
+// reverseArray(arr);
+
+/* ------------------------------------------------------------------------- *
+/* 12. 2D Array - DS */
+/* ------------------------------------------------------------------------- */
+
+let arr = [
+  [1, 1, 1, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0],
+  [1, 1, 1, 0, 0, 0],
+  [0, 0, 2, 4, 4, 0],
+  [0, 0, 0, 2, 0, 0],
+  [0, 0, 1, 2, 4, 0],
+]
+
+const hourglassSum = (arr) => {
+  // Write your code here
+
+  // - You need to considering the matrix as field and you have to move inside it
+  
+  // - Space that you can cover (Left -> Right / Top -> Bottom) with every movements has square shape 
+  
+  // - Square space are 9x9: 3 numbers in rows and 3 number in columns, so you can't iterate over (Arr.length / 2) in row and in colum. Becarefull, 'cose array's index start at 0, so rows.length are 5 unit long (same for columns)
+
+  // - shifting your position over the field you have to iterate the same sum, so, keep the operations clear as as possibile and avoid to overthink and overengineer the for loop
+
+  let rowPosition = 5, columnPosition = 5
+  
+  let maxSum = -100;
+
+  for(let i = 0; i < rowPosition - 1; i++) {
+
+    for(let j = 0; j < columnPosition - 1; j++) {
+
+      let sum = (arr[i][j] + arr[i][j+1] + arr[i][j+2]) + (arr[i+1][j+1]) + (arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]);
+      
+      let arrTest = [arr[i][j], arr[i][j+1], arr[i][j+2], (arr[i+1][j+1]), arr[i+2][j], arr[i+2][j+1], arr[i+2][j+2]];
+      
+      console.log('arrTest:', arrTest)
+      
+      maxSum = Math.max(maxSum, sum);
+
+    }
+
+  }
+
+  return maxSum
+
+}
+
+console.log(hourglassSum(arr));
