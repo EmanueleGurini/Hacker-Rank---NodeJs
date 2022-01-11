@@ -16,4 +16,5 @@ Problem solved:
     10. Time Conversion
     11. Array DS
     12. 2D Array - DS
+    13. Left Rotation
 
