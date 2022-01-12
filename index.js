@@ -14,6 +14,7 @@
     11. Array DS
     12. 2D Array - DS
     13. Left Rotation
+    14. Dynamic Array
 
 */
 
@@ -323,7 +324,7 @@ const hourglassSum = (arr) => {
 /* 13. Left Rotation */
 /* ------------------------------------------------------------------------- */
 
-let arr = [1, 2, 3, 4, 5]
+// let arr = [1, 2, 3, 4, 5]
 
 const rotateLeft = (n, arr) => {
   // Write your code here
@@ -342,4 +343,33 @@ const rotateLeft = (n, arr) => {
   return arrFixed
 }
 
-console.log(rotateLeft(4, arr));
+// console.log(rotateLeft(4, arr));
+
+
+/* ------------------------------------------------------------------------- *
+/* 14. Dynamic Array */
+/* ------------------------------------------------------------------------- */
+
+function dynamicArray(n, queries) {
+    // Write your code here
+    let col = []
+    for(let i = 0; i < n; i++){
+      col[i] = []
+    }
+    let res = []
+    let lastAnswer = 0; 
+    
+    for(let q = 0; q < queries.length; q++){
+      let data = (queries[q][1]^lastAnswer)%n;
+      if (queries[q][0] === 1) {
+        col[data].push(queries[q][2]);
+      } else if (queries[q][0] === 2) {
+        let x = queries[q][2]%col[data].length
+        lastAnswer = col[data][x]
+        res.push(lastAnswer)
+      }
+    }
+  return res
+}
+
+
