@@ -372,4 +372,29 @@ function dynamicArray(n, queries) {
   return res
 }
 
+/* ------------------------------------------------------------------------- *
+/* 15. Sparse Arrays */
+/* ------------------------------------------------------------------------- */
+
+const strings = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf', 'na', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf']
+const queries = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn']
+
+function matchingStrings(strings, queries) {
+    // Write your code here
+    let result = []; 
+    
+    for(let i = 0; i < queries.length; i++) {
+      result[i] = 0;
+    }
+    
+    for(let i = 0; i < queries.length; i++) {
+      for(let j = 0; j < strings.length; j++) {
+        result[i] = queries[i] === strings[j] ? result[i] += 1 : result[i] += 0;
+      }
+    }
+    return result;
+  }
+
+  console.log('Result:', matchingStrings(strings, queries))
+
 
