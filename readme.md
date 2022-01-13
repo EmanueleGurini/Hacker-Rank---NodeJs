@@ -1,7 +1,12 @@
 # Hacker Rack Challenge
 ## PP - Personal Progress
 
- 
+### Rank: 
+
+**Problem Solving Section**:
+  - 13/01/2022 => 829.439
+
+
 Problem solved:
 
     1. Solve Me First
@@ -17,4 +22,5 @@ Problem solved:
     11. Array DS
     12. 2D Array - DS
     13. Left Rotation
+    14. Dynamic Array
 
