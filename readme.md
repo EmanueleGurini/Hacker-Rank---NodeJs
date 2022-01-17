@@ -23,4 +23,5 @@ Problem solved:
     12. 2D Array - DS
     13. Left Rotation
     14. Dynamic Array
+    15. Array Manipulation
 
