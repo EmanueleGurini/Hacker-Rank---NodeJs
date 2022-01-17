@@ -15,6 +15,7 @@
     12. 2D Array - DS
     13. Left Rotation
     14. Dynamic Array
+    15. Array Manipulation
 
 */
 
@@ -376,8 +377,8 @@ function dynamicArray(n, queries) {
 /* 15. Sparse Arrays */
 /* ------------------------------------------------------------------------- */
 
-const strings = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf', 'na', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf']
-const queries = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn']
+/* const strings = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf', 'na', 'asdjf', 'na', 'basdn', 'sdaklfj', 'asdjf']
+const queries = ['abcde', 'sdaklfj', 'asdjf', 'na', 'basdn'] */
 
 function matchingStrings(strings, queries) {
     // Write your code here
@@ -395,6 +396,48 @@ function matchingStrings(strings, queries) {
     return result;
   }
 
-  console.log('Result:', matchingStrings(strings, queries))
+  // console.log('Result:', matchingStrings(strings, queries))
+
+
+/* ------------------------------------------------------------------------- *
+/* 15. Array Manipulation */
+/* ------------------------------------------------------------------------- */
+
+// const arr = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
+const arr = [[2, 6, 8], [3, 5, 7], [1, 8, 1], [5, 9, 15]]
+
+
+const arrayManipulation = (n, queries) => {
+  // Write your code here
+  let zeroArr = '0'.repeat(n).split('').map((e) => parseInt(e));
+  
+  for (let j = 0; j < queries.length; j++) {
+    
+    let startIndex = queries[j][0];
+    
+    let endIndex = queries[j][1];
+    
+    let numberToAdd = queries[j][2];
+    
+    for (let i = 0; i < n; i++) {
+      
+      let index = i + 1;
+      
+      if (index >= startIndex && index <= endIndex) {
+        
+        zeroArr[i] += numberToAdd;
+        
+      }
+      
+    }
+    
+  }
+  
+  return Math.max(...zeroArr);
+}
+
+console.log("Result:", arrayManipulation(10, arr))
+
+
 
 
