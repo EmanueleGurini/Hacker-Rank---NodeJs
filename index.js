@@ -15,7 +15,7 @@
     12. 2D Array - DS
     13. Left Rotation
     14. Dynamic Array
-    15. Array Manipulation
+    15. Array Manipulation (Works, but slow, with time limit exceeded)
 
 */
 
@@ -404,36 +404,26 @@ function matchingStrings(strings, queries) {
 /* ------------------------------------------------------------------------- */
 
 // const arr = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
+// const arr = [[1, 5, 3], [4, 8, 7], [6, 9, 1]];
 const arr = [[2, 6, 8], [3, 5, 7], [1, 8, 1], [5, 9, 15]]
 
 
 const arrayManipulation = (n, queries) => {
-  // Write your code here
-  let zeroArr = '0'.repeat(n).split('').map((e) => parseInt(e));
-  
-  for (let j = 0; j < queries.length; j++) {
-    
-    let startIndex = queries[j][0];
-    
-    let endIndex = queries[j][1];
-    
-    let numberToAdd = queries[j][2];
-    
-    for (let i = 0; i < n; i++) {
+    // Write your code here
+    let initialArray = '0'.repeat(n).split('').map(str => parseInt(str))
+
+    for (let query of queries) {
       
-      let index = i + 1;
-      
-      if (index >= startIndex && index <= endIndex) {
+      for(let i = query[0]; i <= query[1]; i++) {
         
-        zeroArr[i] += numberToAdd;
-        
+        let index = query[1];
+        initialArray[i-1] += query[2]
+
       }
-      
+
     }
-    
-  }
   
-  return Math.max(...zeroArr);
+  return Math.max(...initialArray)
 }
 
 console.log("Result:", arrayManipulation(10, arr))
