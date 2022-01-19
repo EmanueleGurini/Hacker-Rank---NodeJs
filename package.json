@@ -1,0 +1,21 @@
+{
+  "name": "Hacker-Rank-NodeJs",
+  "version": "1.0.0",
+  "description": "### Rank:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmanueleGurini/Hacker-Rank---NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmanueleGurini/Hacker-Rank---NodeJs/issues"
+  },
+  "homepage": "https://github.com/EmanueleGurini/Hacker-Rank---NodeJs#readme",
+  "dependencies": {}
+}

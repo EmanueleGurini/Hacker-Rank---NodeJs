@@ -4,6 +4,7 @@
 ### Rank: 
 
 **Problem Solving Section**:
+  - 19/01/2022 => 743.436
   - 17/01/2022 => 759.728
   - 13/01/2022 => 829.439
 
@@ -25,4 +26,5 @@ Problem solved:
     13. Left Rotation
     14. Dynamic Array
     15. Array Manipulation
+    16. Print the elements of a Linked List
 

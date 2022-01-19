@@ -16,6 +16,7 @@
     13. Left Rotation
     14. Dynamic Array
     15. Array Manipulation (Works, but slow, with time limit exceeded)
+    16. Print the elements of a Linked List
 
 */
 
@@ -428,6 +429,22 @@ const arrayManipulation = (n, queries) => {
 
 console.log("Result:", arrayManipulation(10, arr))
 
+/* ------------------------------------------------------------------------- *
+/* 16. Print the Elements of a Linked List */
+/* ------------------------------------------------------------------------- */
 
+
+const printLinkedList = (head) => {
+  
+  let currentNode = head;
+  
+  while(currentNode != null ) {
+    
+    console.log(currentNode.data)
+    currentNode = currentNode.next
+    
+  }
+
+}
 
 
